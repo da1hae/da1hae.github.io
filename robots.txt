@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://da1hae.xyz/sitemap.xml
