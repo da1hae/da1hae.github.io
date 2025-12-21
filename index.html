@@ -1289,17 +1289,27 @@
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name) return alert("이름/브랜드명을 입력해주세요 🙂");
+    if (!phone) return alert("연락처를 입력해주세요 🙂");
+    if (!email) return alert("메일 주소를 입력해주세요 🙂");
+    if (!message) return alert("현재 상황과 고민을 입력해주세요 🙂");
+
     const data = {
-      name: document.getElementById("name").value,
-      phone: document.getElementById("phone").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-      page: window.location.pathname
+      name,
+       phone,
+       email,
+       message,
+       page: window.location.href
     };
 
     try {
       const res = await fetch(
-        "https://script.google.com/macros/s/AKfycbwVanJqC9uDUsFkSs1v2kZ8D6N85KSrmVqh0xmjGR1_izpRGC0qAc6R9ZJKEL6010X5/exec",
+        "https://script.google.com/macros/s/AKfycbwVanJqC9uDUsFkSs1v2kZ8D6N85KSrmVqh0xmjGR1_izpRGC0qAc6R9ZJKEL601OX5/exec",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -1313,10 +1323,10 @@
         alert("접수 완료! 감사합니다 🙂");
         form.reset();
       } else {
-        alert("전송 실패. 다시 시도해주세요.");
+        alert("전송 실패, 다시 시도해주세요. 🥹");
       }
     } catch (e) {
-      alert("네트워크 오류 발생");
+      alert("네트워크 오류 발생. 이메일 또는 카카오로 연락해주세요. 🙇🏻‍♀️");
     }
   });
 </script>
