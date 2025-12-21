@@ -1285,6 +1285,7 @@
 
 <script>
   const form = document.getElementById("contactForm");
+  const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwVanJqC9uDUsFkSs1v2kZ8D6N85KSrmVqh0xmjGR1_izpRGC0qAc6R9ZJKEL601OX5/exec";
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -1299,34 +1300,29 @@
     if (!email) return alert("메일 주소를 입력해주세요 🙂");
     if (!message) return alert("현재 상황과 고민을 입력해주세요 🙂");
 
-    const data = {
-      name,
-       phone,
-       email,
-       message,
-       page: window.location.href
-    };
+    const data = { name, phone, email, message, page: window.location.href };
 
     try {
-      const res = await fetch(
-        "https://script.google.com/macros/s/AKfycbwVanJqC9uDUsFkSs1v2kZ8D6N85KSrmVqh0xmjGR1_izpRGC0qAc6R9ZJKEL601OX5/exec",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        }
-      );
+      const res = await fetch(WEBAPP_URL, {
+        method: "POST",
+        // ✅ application/json 금지! (프리플라이트 유발)
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(data),
+      });
 
-      const result = await res.json();
+      // GAS가 가끔 JSON이 아니라 텍스트로 줄 때도 있어서 안전하게 처리
+      const text = await res.text();
+      let result = {};
+      try { result = JSON.parse(text); } catch (_) {}
 
       if (result.ok) {
         alert("접수 완료! 감사합니다 🙂");
         form.reset();
       } else {
-        alert("전송 실패, 다시 시도해주세요. 🥹");
+        alert("전송 실패, 다시 시도해주세요.🥹");
       }
-    } catch (e) {
-      alert("네트워크 오류 발생. 이메일 또는 카카오로 연락해주세요. 🙇🏻‍♀️");
+    } catch (err) {
+      alert("네트워크 오류 발생. 이메일 또는 카카오로 연락해주세요.🙇🏻‍♀️");
     }
   });
 </script>
