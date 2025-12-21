@@ -1194,30 +1194,37 @@
           </p>
         </div>
 
-        <div class="contact-layout">
-          <form onsubmit="event.preventDefault(); alert('실제 전송 기능은 아직 연결되지 않았어요. 이메일이나 카톡으로 편하게 연락 주세요 🙂');">
-            <div class="field">
-              <label for="name">이름 / 브랜드명</label>
-              <input id="name" type="text" placeholder="예: 다원해 / da1hae STUDIO" />
-            </div>
-              <div class="field">
-                <label for="phone">연락처</label>
-                <input id="phone" name="phone" type="text" placeholder="예: 010-1234-5678" />
-            </div>
-            <div class="field">
-              <label for="email">메일 주소</label>
-              <input id="email" type="email" placeholder="답변 받을 이메일을 적어주세요." />
-            </div>
-            <div class="field">
-              <label for="message">현재 상황과 고민</label>
-              <textarea id="message" placeholder="업종, 현재 운영 중인 채널, 월 예산, 가장 고민되는 내용 등을 편하게 작성해주세요."></textarea>
-            </div>
-            <button class="btn btn-primary" type="submit">상담 내용 제출하기</button>
-          </form>
+        <form id="contactForm" class="contact-layout">
+
+          <div class="field">
+            <label for="name">이름 / 브랜드명</label>
+            <input id="name" type="text" placeholder="예: 다원해 / da1hae STUDIO" />
+          </div>
+
+          <div class="field">
+            <label for="phone">연락처</label>
+            <input id="phone" type="text" placeholder="예: 010-1234-5678" />
+          </div>
+
+          <div class="field">
+            <label for="email">메일 주소</label>
+            <input id="email" type="email" placeholder="답변 받을 이메일을 적어주세요." />
+          </div>
+
+          <div class="field">
+            <label for="message">현재 상황과 고민</label>
+            <textarea id="message" placeholder="업종, 채널, 예산, 고민 등"></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">
+            상담 내용 제출하기
+          </button>
+
+        </form>
 
           <div class="contact-info">
             <p><strong>다른 채널이 더 편하시면, 이렇게도 연락 주세요.</strong></p>
-            <p>이메일: <a href="mailto:da1hae.co.kr@gmail.com">da1hae.co.kr@gmail.com</a> </p>
+            <p>이메일: <a href="mailto:ramy_da@naver.com">mailto:ramy_da@naver.com</a> </p>
             <p>인스타그램: <a href="https://instagram.com/1hae.exe" target="_blank">@1hae.exe</a></p>
             <p>카카오톡 오픈채팅: <a href="http://pf.kakao.com/_gfUgG/chat" target="_blank">카카오채널 다원</a></p>
             <p style="margin-top:10px; font-size:0.78rem;">
@@ -1275,5 +1282,44 @@
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script>
+
+<script>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: document.getElementById("name").value,
+      phone: document.getElementById("phone").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+      page: window.location.pathname
+    };
+
+    try {
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbwVanJqC9uDUsFkSs1v2kZ8D6N85KSrmVqh0xmjGR1_izpRGC0qAc6R9ZJKEL6010X5/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        }
+      );
+
+      const result = await res.json();
+
+      if (result.ok) {
+        alert("접수 완료! 감사합니다 🙂");
+        form.reset();
+      } else {
+        alert("전송 실패. 다시 시도해주세요.");
+      }
+    } catch (e) {
+      alert("네트워크 오류 발생");
+    }
+  });
+</script>
+
 </body>
 </html>
