@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marketing Services | DA1HAE Studio</title>
-  <meta name="description" content="DA1HAE Studio의 마케팅 서비스 구성. 마케팅 진단, SNS 월간 운영, 메타 광고 기획 및 운영, 인플루언서 마케팅 운영, 랜딩페이지·상세페이지 기획, 마케팅 컨설팅과 교육을 제공합니다." />
+  <title>마케팅 서비스 안내 | 작은 브랜드 운영 범위 정리 | DA1HAE Studio</title>
+  <meta name="description" content="작은 브랜드를 위한 DA1HAE Studio 서비스 안내. 마케팅 진단, SNS 콘텐츠 운영, 광고 운영 & 소재 개선, 인플루언서 운영, 랜딩페이지 기획, 컨설팅과 교육 범위를 정리합니다." />
   <link rel="canonical" href="https://da1hae.xyz/services/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Services | DA1HAE Studio" />
-  <meta property="og:description" content="작은 브랜드 상황에 맞게 조합할 수 있는 SNS 운영, 메타 광고, 인플루언서 마케팅, 랜딩페이지 기획, 컨설팅 서비스 구성." />
+  <meta property="og:title" content="마케팅 서비스 안내 | DA1HAE Studio" />
+  <meta property="og:description" content="마케팅 진단, SNS 콘텐츠 운영, 광고 운영 & 소재 개선, 인플루언서 운영, 페이지 기획, 컨설팅과 교육 중 지금 필요한 시작점을 정리합니다." />
   <meta property="og:url" content="https://da1hae.xyz/services/" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZ6HBSS5EX"></script>
@@ -21,18 +21,43 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "@id": "https://da1hae.xyz/services/#service",
-      "name": "DA1HAE Studio Marketing Services",
-      "url": "https://da1hae.xyz/services/",
-      "provider": {
-        "@type": "Organization",
-        "name": "DA1HAE Studio",
-        "url": "https://da1hae.xyz/"
-      },
-      "serviceType": "Marketing diagnosis and operation planning, SNS monthly operation, Meta ads planning and operation, influencer marketing operation, landing page and product detail page planning, marketing consulting and training",
-      "areaServed": "KR",
-      "inLanguage": "ko-KR"
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://da1hae.xyz/services/#service",
+          "name": "DA1HAE Studio 마케팅 서비스",
+          "url": "https://da1hae.xyz/services/",
+          "provider": {
+            "@type": "Organization",
+            "name": "DA1HAE Studio",
+            "url": "https://da1hae.xyz/"
+          },
+          "description": "작은 브랜드의 현재 채널, 예산, 콘텐츠 흐름, 내부 리소스를 기준으로 필요한 마케팅 운영 범위와 우선순위를 정리합니다.",
+          "serviceType": "마케팅 진단 및 우선순위 정리, SNS 콘텐츠 기획 및 월간 운영, 광고 운영 & 소재 개선, 인플루언서 마케팅 운영, 랜딩페이지 및 상세페이지 기획, 마케팅 컨설팅 및 교육",
+          "areaServed": "KR",
+          "inLanguage": "ko-KR",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "DA1HAE Studio 서비스 구성",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "마케팅 진단 & 우선순위 정리", "description": "현재 채널과 콘텐츠 흐름을 점검하고 바로 실행할 우선순위를 정리합니다." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SNS 콘텐츠 기획 / 월간 운영", "description": "브랜드 톤에 맞는 콘텐츠 주제와 월간 운영 흐름을 설계하고 실행을 관리합니다." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "광고 운영 & 소재 개선", "description": "광고 캠페인 구조, 소재 메시지, 랜딩 흐름을 함께 보고 개선 방향을 정리합니다." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "인플루언서 마케팅 운영", "description": "협업 후보 기준부터 콘텐츠 가이드, 업로드 체크, 결과 정리까지 운영 흐름을 잡습니다." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "랜딩페이지 / 상세페이지 기획", "description": "유입 이후 설득이 이어지도록 페이지 순서, 핵심 카피, CTA 흐름을 설계합니다." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "마케팅 컨설팅 & 교육", "description": "내부 담당자가 직접 실행할 수 있도록 기준, 체크리스트, 피드백 방향을 정리합니다." } }
+            ]
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://da1hae.xyz/services/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "DA1HAE Studio", "item": "https://da1hae.xyz/" },
+            { "@type": "ListItem", "position": 2, "name": "서비스 안내", "item": "https://da1hae.xyz/services/" }
+          ]
+        }
+      ]
     }
   </script>
 </head>
@@ -51,134 +76,173 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <span class="eyebrow">marketing services</span>
-        <h1>마케팅 서비스</h1>
-        <p class="hero-copy">브랜드 상황에 맞춰 필요한 범위만 선택하거나, 진단 후 월 운영 패키지로 조합할 수 있습니다.</p>
-        <div class="btn-row"><a class="btn primary" href="/contact/">마케팅 서비스 문의하기</a></div>
+    <section class="hero services-hero">
+      <div class="container hero-grid services-hero-grid">
+        <div class="hero-main">
+          <span class="eyebrow">marketing services</span>
+          <h1><span>브랜드 상황에 맞게</span><span>필요한 마케팅 운영 범위를 정리합니다.</span></h1>
+          <p class="hero-copy">모든 브랜드가 처음부터 풀서비스 마케팅이 필요한 것은 아닙니다. DA1HAE Studio는 현재 채널, 예산, 콘텐츠 흐름, 내부 리소스를 보고 지금 먼저 해야 할 작업과 맡길 범위를 정리합니다.</p>
+          <div class="btn-row">
+            <a class="btn primary" href="/contact/">현재 상황 문의하기</a>
+            <a class="btn secondary" href="#service-details">서비스별 구성 보기</a>
+          </div>
+        </div>
+        <aside class="hero-diagnostic" aria-label="DA1HAE Studio service scope">
+          <span>scope guide</span>
+          <strong>서비스를 먼저 확정하지 않아도 됩니다.</strong>
+          <ul>
+            <li>현재 상태를 기준으로 시작점 정리</li>
+            <li>단건, 월 운영, 컨설팅 범위 제안</li>
+            <li>실행 후 남길 결과물 기준 확인</li>
+          </ul>
+        </aside>
       </div>
     </section>
 
-    <section class="section alt">
+    <section class="section services-selector-section">
+      <div class="container">
+        <div class="section-head section-head-stacked">
+          <div>
+            <span class="section-kicker">start point</span>
+            <h2>어떤 상태인가요?</h2>
+            <p class="section-desc">현재 가장 가까운 상태를 고르면 아래 서비스 상세로 이동합니다. 실제 진행 범위는 문의 후 브랜드 상황에 맞춰 조정합니다.</p>
+          </div>
+        </div>
+        <div class="selector-list services-selector-list">
+          <a class="selector-row" href="#service-diagnosis"><span>01</span><strong>무엇부터 해야 할지 모르겠다면</strong><em>마케팅 진단 & 우선순위 정리</em></a>
+          <a class="selector-row" href="#service-sns"><span>02</span><strong>꾸준히 운영할 사람이 필요하다면</strong><em>SNS 콘텐츠 기획 / 월간 운영</em></a>
+          <a class="selector-row" href="#service-ads"><span>03</span><strong>광고 성과를 다시 보고 싶다면</strong><em>광고 운영 & 소재 개선</em></a>
+          <a class="selector-row" href="#service-influencer"><span>04</span><strong>협업 관리가 복잡하다면</strong><em>인플루언서 마케팅 운영</em></a>
+          <a class="selector-row" href="#service-landing"><span>05</span><strong>전환 흐름이 약하다면</strong><em>랜딩페이지 / 상세페이지 기획</em></a>
+          <a class="selector-row" href="#service-education"><span>06</span><strong>내부 담당자가 실행해야 한다면</strong><em>마케팅 컨설팅 & 교육</em></a>
+        </div>
+        <div class="selector-actions">
+          <a class="btn primary" href="/contact/">현재 상황 문의하기</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section service-details-section" id="service-details">
+      <div class="container">
+        <div class="section-head section-head-stacked">
+          <div>
+            <span class="section-kicker">service details</span>
+            <h2>서비스별 구성</h2>
+            <p class="section-desc">각 서비스는 단독으로 진행하거나, 브랜드 상황에 따라 필요한 범위만 조합할 수 있습니다.</p>
+          </div>
+        </div>
+        <div class="service-detail-list">
+          <article class="service-detail-block" id="service-diagnosis">
+            <div class="service-detail-head"><span>01</span><div><h2>마케팅 진단 & 우선순위 정리</h2><p>현재 채널과 콘텐츠 흐름을 점검하고 이번 달 바로 실행할 우선순위를 정리합니다.</p></div></div>
+            <div class="service-detail-columns">
+              <div><h3>추천 상황</h3><ul><li>마케팅을 어디서부터 손봐야 할지 모르는 브랜드</li><li>콘텐츠, 광고, 협업이 각각 따로 움직이는 경우</li></ul></div>
+              <div><h3>포함 범위</h3><ul><li>현재 채널 / 콘텐츠 / 광고 흐름 점검</li><li>문제 구간 정리</li><li>우선순위 제안</li></ul></div>
+              <div><h3>남는 결과물</h3><ul><li>진단 요약</li><li>우선순위 리스트</li><li>채널별 개선 방향</li></ul></div>
+            </div>
+            <a class="btn primary" href="/contact/">이 범위로 문의하기</a>
+          </article>
+
+          <article class="service-detail-block" id="service-sns">
+            <div class="service-detail-head"><span>02</span><div><h2>SNS 콘텐츠 기획 / 월간 운영</h2><p>브랜드 톤에 맞는 콘텐츠 주제와 월간 운영 흐름을 설계하고 실행을 관리합니다.</p></div></div>
+            <div class="service-detail-columns">
+              <div><h3>추천 상황</h3><ul><li>SNS를 꾸준히 운영해야 하지만 방향이 자주 흔들리는 브랜드</li><li>내부에 콘텐츠 기획자가 부족한 경우</li></ul></div>
+              <div><h3>포함 범위</h3><ul><li>월간 콘텐츠 방향 정리</li><li>콘텐츠 주제 / 포맷 기획</li><li>업로드 흐름 관리</li></ul></div>
+              <div><h3>남는 결과물</h3><ul><li>월간 콘텐츠 캘린더</li><li>콘텐츠 기획안</li><li>운영 리포트</li></ul></div>
+            </div>
+            <a class="btn primary" href="/contact/">이 범위로 문의하기</a>
+          </article>
+
+          <article class="service-detail-block" id="service-ads">
+            <div class="service-detail-head"><span>03</span><div><h2>광고 운영 & 소재 개선</h2><p>광고 캠페인 구조, 소재 메시지, 랜딩 흐름을 함께 보고 개선 방향을 정리합니다.</p></div></div>
+            <div class="service-detail-columns">
+              <div><h3>추천 상황</h3><ul><li>광고는 집행 중이지만 무엇을 개선해야 할지 불명확한 경우</li><li>소재와 랜딩페이지 흐름을 함께 점검해야 하는 경우</li></ul></div>
+              <div><h3>포함 범위</h3><ul><li>광고 캠페인 구조 점검</li><li>소재 카피 / 구성 개선</li><li>성과 해석과 다음 액션 정리</li></ul></div>
+              <div><h3>남는 결과물</h3><ul><li>광고 운영안</li><li>소재 카피 / 구성안</li><li>성과 요약과 다음 액션</li></ul></div>
+            </div>
+            <a class="btn primary" href="/contact/">이 범위로 문의하기</a>
+          </article>
+
+          <article class="service-detail-block" id="service-influencer">
+            <div class="service-detail-head"><span>04</span><div><h2>인플루언서 마케팅 운영</h2><p>협업 후보 기준부터 콘텐츠 가이드, 업로드 체크, 결과 정리까지 운영 흐름을 잡습니다.</p></div></div>
+            <div class="service-detail-columns">
+              <div><h3>추천 상황</h3><ul><li>인플루언서 리스트업 이후 관리가 복잡한 브랜드</li><li>협업 일정, 가이드, 결과 정리가 필요한 경우</li></ul></div>
+              <div><h3>포함 범위</h3><ul><li>후보 기준 정리</li><li>협업 가이드 구성</li><li>진행 현황 관리</li><li>업로드 / 결과 정리</li></ul></div>
+              <div><h3>남는 결과물</h3><ul><li>후보 기준</li><li>협업 가이드</li><li>진행 현황표</li><li>결과 요약</li></ul></div>
+            </div>
+            <a class="btn primary" href="/contact/">이 범위로 문의하기</a>
+          </article>
+
+          <article class="service-detail-block" id="service-landing">
+            <div class="service-detail-head"><span>05</span><div><h2>랜딩페이지 / 상세페이지 기획</h2><p>유입 이후 설득이 이어지도록 페이지 순서, 핵심 카피, 제작 전달용 구조를 설계합니다.</p></div></div>
+            <div class="service-detail-columns">
+              <div><h3>추천 상황</h3><ul><li>광고나 콘텐츠 유입 이후 전환이 약한 경우</li><li>디자이너 / 개발자에게 넘길 기획 구조가 필요한 경우</li></ul></div>
+              <div><h3>포함 범위</h3><ul><li>페이지 구조 설계</li><li>섹션별 메시지 정리</li><li>CTA 흐름 제안</li></ul></div>
+              <div><h3>남는 결과물</h3><ul><li>페이지 구조안</li><li>섹션별 카피</li><li>제작 전달용 기획안</li></ul></div>
+            </div>
+            <a class="btn primary" href="/contact/">이 범위로 문의하기</a>
+          </article>
+
+          <article class="service-detail-block" id="service-education">
+            <div class="service-detail-head"><span>06</span><div><h2>마케팅 컨설팅 & 교육</h2><p>내부 담당자가 직접 실행할 수 있도록 기준, 체크리스트, 피드백 방향을 정리합니다.</p></div></div>
+            <div class="service-detail-columns">
+              <div><h3>추천 상황</h3><ul><li>내부 담당자가 있지만 실행 기준이 부족한 경우</li><li>마케팅 기본 구조나 리포트 해석 교육이 필요한 경우</li></ul></div>
+              <div><h3>포함 범위</h3><ul><li>실무 기준 정리</li><li>콘텐츠 / 광고 / KPI 피드백</li><li>실행 체크리스트 구성</li></ul></div>
+              <div><h3>남는 결과물</h3><ul><li>컨설팅 요약</li><li>교육 자료</li><li>실행 체크리스트</li></ul></div>
+            </div>
+            <a class="btn primary" href="/contact/">이 범위로 문의하기</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-process-section">
       <div class="container">
         <div class="section-head">
           <div>
             <span class="section-kicker">process</span>
-            <h2>작업 프로세스</h2>
+            <h2>문의 후 이렇게 진행됩니다.</h2>
           </div>
-          <p class="section-desc">진단부터 개선까지 필요한 범위를 먼저 정리한 뒤, 실행 가능한 단위로 진행합니다.</p>
+          <p class="section-desc">상담 요청 이후에는 브랜드 상황을 먼저 확인하고, 필요한 범위를 정리한 뒤 실행 또는 컨설팅 방식으로 진행합니다.</p>
         </div>
-        <div class="grid four process">
-          <article class="card"><h3>진단</h3><p>현재 브랜드, 채널, 콘텐츠, 광고 구조를 확인합니다.</p></article>
-          <article class="card"><h3>설계</h3><p>목표와 우선순위에 맞춰 실행 범위를 정리합니다.</p></article>
-          <article class="card"><h3>실행</h3><p>콘텐츠, 광고, 협업, 페이지 기획을 실행합니다.</p></article>
-          <article class="card"><h3>개선</h3><p>성과를 보고 다음 액션을 정리합니다.</p></article>
+        <div class="work-start-flow">
+          <article><span>01</span><h3>상황 공유</h3><p>업종, 채널, 예산, 고민 확인</p></article>
+          <article><span>02</span><h3>현재 상태 점검</h3><p>채널 / 콘텐츠 / 광고 / 내부 리소스 확인</p></article>
+          <article><span>03</span><h3>우선순위 정리</h3><p>먼저 할 일과 미룰 일 구분</p></article>
+          <article><span>04</span><h3>업무 범위 제안</h3><p>단건 / 월 운영 / 컨설팅 범위 제안</p></article>
+          <article><span>05</span><h3>실행 또는 컨설팅 진행</h3><p>합의한 범위 기준으로 진행</p></article>
+          <article><span>06</span><h3>결과 리뷰</h3><p>결과 해석과 다음 액션 정리</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section services-faq-section">
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="section-kicker">service guide</span>
-            <h2>어떤 서비스가 필요한지 모르겠다면</h2>
+            <span class="section-kicker">faq</span>
+            <h2>서비스 문의 전 자주 묻는 질문</h2>
           </div>
-          <p class="section-desc">아래 기준으로 먼저 확인해보세요.</p>
+          <p class="section-desc">범위가 아직 정리되지 않았어도 괜찮습니다. 현재 상태를 기준으로 현실적인 시작점을 함께 확인합니다.</p>
         </div>
-        <div class="grid three">
-          <article class="card"><h3>무엇부터 해야 할지 모르겠다면</h3><p>마케팅 진단 & 운영 설계</p></article>
-          <article class="card"><h3>SNS를 꾸준히 운영해야 한다면</h3><p>SNS 월간 운영</p></article>
-          <article class="card"><h3>광고 효율과 소재를 개선해야 한다면</h3><p>메타 광고 기획 & 운영</p></article>
-          <article class="card"><h3>제품 협찬이나 체험단을 운영해야 한다면</h3><p>인플루언서 마케팅 운영</p></article>
-          <article class="card"><h3>광고 유입 후 전환이 약하다면</h3><p>랜딩페이지 / 상세페이지 기획</p></article>
-          <article class="card"><h3>내부 담당자 역량을 키워야 한다면</h3><p>마케팅 컨설팅 & 교육</p></article>
+        <div class="faq-list">
+          <details><summary>아직 마케팅 방향이 정리되지 않아도 문의할 수 있나요?</summary><p>가능합니다. 방향이 정리되지 않은 상태라면 진단과 우선순위 정리부터 제안드립니다.</p></details>
+          <details><summary>한 가지 업무만 의뢰할 수 있나요?</summary><p>가능합니다. 광고 구조 점검, 랜딩페이지 기획, 콘텐츠 캘린더처럼 필요한 범위만 진행할 수 있습니다.</p></details>
+          <details><summary>광고 예산이 적어도 가능한가요?</summary><p>가능합니다. 다만 예산 규모에 맞춰 테스트 범위와 기대할 수 있는 판단 기준을 현실적으로 정리합니다.</p></details>
+          <details><summary>디자인 / 촬영도 포함되나요?</summary><p>프로젝트 범위에 따라 다릅니다. 직접 제작이 필요한 경우와 제작자에게 넘길 기획안이 필요한 경우를 나눠 제안드립니다.</p></details>
+          <details><summary>월간 운영과 단건 진단은 어떻게 다른가요?</summary><p>단건 진단은 방향과 우선순위를 정리하는 작업이고, 월간 운영은 정해진 범위를 반복 실행하고 개선하는 방식입니다.</p></details>
+          <details><summary>내부 담당자 교육도 가능한가요?</summary><p>가능합니다. 콘텐츠, 광고, KPI, 리포트 해석 등 실제 운영 기준을 중심으로 진행합니다.</p></details>
+          <details><summary>보고서는 어떤 방식으로 제공되나요?</summary><p>단순 수치 나열보다 결과 해석, 문제점, 다음 액션 중심으로 정리합니다.</p></details>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container editorial-list">
-        <article class="service-detail">
-          <div><span class="section-kicker">service 01</span><h2>마케팅 진단 & 운영 설계</h2></div>
-          <div class="detail-grid">
-            <div class="card"><h3>이런 분께 추천</h3><ul><li>무엇부터 해야 할지 우선순위가 필요한 팀</li><li>SNS, 광고, 콘텐츠가 따로 움직이고 있는 브랜드</li><li>내부에서 실행할 기준이 필요한 경우</li></ul></div>
-            <div class="card"><h3>제공 범위</h3><ul><li>브랜드/제품/채널 현황 진단</li><li>타깃과 핵심 메시지 정리</li><li>1~2개월 실행 우선순위 제안</li><li>채널별 운영 방향 정리</li></ul></div>
-            <div class="card tint"><h3>결과물</h3><ul><li>진단 요약 문서</li><li>실행 우선순위</li><li>채널별 개선안</li></ul></div>
-          </div>
-        </article>
-
-        <article class="service-detail">
-          <div><span class="section-kicker">service 02</span><h2>SNS 월간 운영</h2></div>
-          <div class="detail-grid">
-            <div class="card"><h3>이런 분께 추천</h3><ul><li>브랜드 SNS를 꾸준히 운영해야 하는 경우</li><li>콘텐츠 방향은 있는데 실행 인력이 부족한 경우</li><li>피드, 릴스, 스토리 운영을 정리하고 싶은 경우</li></ul></div>
-            <div class="card"><h3>제공 범위</h3><ul><li>월간 콘텐츠 캘린더</li><li>콘텐츠 주제/카피/구성안</li><li>업로드 운영 가이드</li><li>월간 성과 요약</li></ul></div>
-            <div class="card tint"><h3>결과물</h3><ul><li>월간 운영안</li><li>콘텐츠 기획안</li><li>채널 운영 리포트</li></ul></div>
-          </div>
-        </article>
-
-        <article class="service-detail">
-          <div><span class="section-kicker">service 03</span><h2>메타 광고 기획 & 운영</h2></div>
-          <div class="detail-grid">
-            <div class="card"><h3>이런 분께 추천</h3><ul><li>Meta 광고를 시작하거나 다시 정리해야 하는 경우</li><li>광고는 돌리고 있지만 소재/메시지가 약한 경우</li><li>클릭 이후 전환 흐름까지 함께 봐야 하는 경우</li></ul></div>
-            <div class="card"><h3>제공 범위</h3><ul><li>캠페인 구조 점검</li><li>광고 소재 메시지 기획</li><li>타깃/예산/세팅 방향 제안</li><li>주간 또는 월간 성과 리포트</li></ul></div>
-            <div class="card tint"><h3>결과물</h3><ul><li>광고 운영안</li><li>소재 카피/구성안</li><li>성과 리포트 및 다음 액션</li></ul></div>
-          </div>
-        </article>
-
-        <article class="service-detail">
-          <div><span class="section-kicker">service 04</span><h2>인플루언서 마케팅 운영</h2></div>
-          <div class="detail-grid">
-            <div class="card"><h3>이런 분께 추천</h3><ul><li>제품과 맞는 인플루언서 협업을 진행하고 싶은 경우</li><li>단순 노출보다 콘텐츠 자산을 남기고 싶은 경우</li><li>후보 선정, 가이드, 업로드 체크까지 관리가 필요한 경우</li></ul></div>
-            <div class="card"><h3>제공 범위</h3><ul><li>협업 방향 설계</li><li>후보 선정 기준 정리</li><li>콘텐츠 가이드 작성</li><li>업로드 현황 및 결과 정리</li></ul></div>
-            <div class="card tint"><h3>결과물</h3><ul><li>인플루언서 협업 운영안</li><li>콘텐츠 가이드</li><li>진행 현황표</li><li>결과 요약 리포트</li></ul></div>
-          </div>
-        </article>
-
-        <article class="service-detail">
-          <div><span class="section-kicker">service 05</span><h2>랜딩페이지 / 상세페이지 기획</h2></div>
-          <div class="detail-grid">
-            <div class="card"><h3>이런 분께 추천</h3><ul><li>광고 유입 후 전환 페이지가 필요한 경우</li><li>제품 설명은 많은데 구매 설득 구조가 약한 경우</li><li>디자이너에게 넘길 기획안이 필요한 경우</li></ul></div>
-            <div class="card"><h3>제공 범위</h3><ul><li>타깃/구매 장벽 정리</li><li>페이지 섹션 구성</li><li>핵심 카피와 콘텐츠 흐름 기획</li><li>제작 전달용 와이어프레임 작성</li></ul></div>
-            <div class="card tint"><h3>결과물</h3><ul><li>페이지 구조안</li><li>섹션별 카피</li><li>제작 전달용 기획안</li></ul></div>
-          </div>
-        </article>
-
-        <article class="service-detail">
-          <div><span class="section-kicker">service 06</span><h2>마케팅 컨설팅 & 교육</h2></div>
-          <div class="detail-grid">
-            <div class="card"><h3>이런 분께 추천</h3><ul><li>내부 담당자가 있지만 마케팅 기준이 필요한 경우</li><li>광고, 콘텐츠, KPI, 리포트 해석을 실무 관점으로 배우고 싶은 경우</li><li>팀 안에서 공통된 마케팅 언어와 실행 기준을 만들고 싶은 경우</li></ul></div>
-            <div class="card"><h3>제공 범위</h3><ul><li>브랜드/채널 현황 기반 컨설팅</li><li>KPI, 콘텐츠, 광고, 인플루언서 운영 기준 정리</li><li>팀 대상 실무 교육 또는 Q&A 세션</li><li>실행 과제 및 피드백 방향 제안</li></ul></div>
-            <div class="card tint"><h3>결과물</h3><ul><li>컨설팅 요약 문서</li><li>교육 자료 또는 Q&A 정리본</li><li>실행 체크리스트</li></ul></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section alt">
+    <section class="section services-cta-section">
       <div class="container">
-        <div class="section-head">
+        <div class="service-cta">
           <div>
-            <span class="section-kicker">work model</span>
-            <h2>진행 방식</h2>
-          </div>
-        </div>
-        <div class="grid three">
-          <article class="card"><h3>단건 작업</h3><p>진단, 광고 구조 점검, 랜딩페이지 기획처럼 필요한 범위만 짧게 진행합니다.</p></article>
-          <article class="card"><h3>월 운영</h3><p>SNS 운영, 광고 운영, 인플루언서 협업처럼 반복 관리가 필요한 업무를 월 단위로 진행합니다.</p></article>
-          <article class="card"><h3>컨설팅/교육</h3><p>내부 담당자가 직접 실행할 수 있도록 기준과 체크리스트를 정리합니다.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="banner">
-          <div>
-            <span class="section-kicker">start point</span>
-            <h2>어떤 서비스가 필요한지 모르겠다면,<br />먼저 진단부터 시작해도 됩니다.</h2>
-            <p class="section-desc">현재 브랜드 상황을 보내주시면 단건 작업이 맞는지, 월 운영이 필요한지, 내부 실행으로 충분한지 함께 정리해드립니다.</p>
+            <span class="section-kicker">contact</span>
+            <h2>현재 브랜드 상황을 남겨주세요.</h2>
+            <p class="section-desc">가능한 업무 범위와 추천 시작점을 확인해 답변드립니다.</p>
           </div>
           <a class="btn primary" href="/contact/">마케팅 범위 문의하기</a>
         </div>
