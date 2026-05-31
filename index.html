@@ -283,7 +283,16 @@
       <div class="footer-links"><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a></div>
     </div>
   </footer>
+  <button class="top-button" type="button" aria-label="맨 위로 이동">TOP</button>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    const topButton = document.querySelector(".top-button");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const updateTopButton = () => topButton?.classList.toggle("is-visible", window.scrollY > 160);
+    updateTopButton();
+    window.addEventListener("scroll", updateTopButton, { passive: true });
+    topButton?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" }));
+  </script>
   <script>
     const portfolioModal = document.getElementById("portfolioModal");
     const portfolioTitle = document.getElementById("portfolioModalTitle");
