@@ -127,73 +127,120 @@
         <div class="section-head section-head-stacked">
           <div>
             <span class="section-kicker">product preview</span>
-            <h2>운영 구조를 이해하기 위한 제품 예시 화면</h2>
-            <p class="section-desc">아래 화면은 인플루언서 협업 운영 구조를 이해하기 위한 예시 화면입니다.</p>
+            <h2>Influencer CRM 화면 예시</h2>
+            <p class="section-desc">인플루언서 후보 관리부터 캠페인 상태, 발행 일정, 댓글 반응 분석까지 운영 흐름에 맞춰 확인할 수 있습니다.</p>
           </div>
         </div>
 
-        <div class="dashboard-mock" aria-label="Influencer CRM dashboard preview">
-          <aside class="mock-sidebar">
-            <div class="mock-logo">CRM</div>
-            <div class="mock-folder is-active"><span>Launch campaign</span><em>24</em></div>
-            <div class="mock-folder"><span>Seed list</span><em>18</em></div>
-            <div class="mock-folder"><span>Review queue</span><em>07</em></div>
-            <div class="mock-folder"><span>Published</span><em>32</em></div>
-          </aside>
+        <div class="crm-preview" data-crm-preview>
+          <div class="preview-tabs" role="tablist" aria-label="Influencer CRM preview screens">
+            <button class="preview-tab is-active" type="button" id="preview-tab-dashboard" role="tab" aria-selected="true" aria-controls="preview-panel-dashboard" data-preview-tab="dashboard">Dashboard</button>
+            <button class="preview-tab" type="button" id="preview-tab-list" role="tab" aria-selected="false" aria-controls="preview-panel-list" data-preview-tab="list">Influencer List</button>
+            <button class="preview-tab" type="button" id="preview-tab-board" role="tab" aria-selected="false" aria-controls="preview-panel-board" data-preview-tab="board">Campaign Board</button>
+            <button class="preview-tab" type="button" id="preview-tab-calendar" role="tab" aria-selected="false" aria-controls="preview-panel-calendar" data-preview-tab="calendar">Content Calendar</button>
+            <button class="preview-tab" type="button" id="preview-tab-reaction" role="tab" aria-selected="false" aria-controls="preview-panel-reaction" data-preview-tab="reaction">Comment / Reaction</button>
+          </div>
 
-          <div class="mock-main">
-            <div class="mock-toolbar">
-              <div>
-                <span class="mock-label">campaign</span>
-                <strong>Spring Product Seeding</strong>
-              </div>
-              <button type="button" class="mock-export">CSV/XLSX</button>
-            </div>
+          <p class="preview-description" data-preview-description>저장된 후보, 진행 중인 캠페인, 발행 예정 콘텐츠, 댓글 반응 정리 상태를 한 화면에서 확인합니다.</p>
 
-            <div class="mock-table">
-              <div class="mock-row mock-head">
-                <span>candidate</span>
-                <span>status</span>
-                <span>owner</span>
-                <span>publish</span>
-                <span>comments</span>
-              </div>
-              <div class="mock-row">
-                <span><strong>@studio.muse</strong><small>beauty · reel</small></span>
-                <span><b class="status in-progress">in progress</b></span>
-                <span>DW</span>
-                <span>05.08</span>
-                <span>allowed signal</span>
-              </div>
-              <div class="mock-row">
-                <span><strong>@daily.object</strong><small>lifestyle · feed</small></span>
-                <span><b class="status scheduled">scheduled</b></span>
-                <span>HN</span>
-                <span>05.11</span>
-                <span>memo added</span>
-              </div>
-              <div class="mock-row">
-                <span><strong>@curated.room</strong><small>home · story</small></span>
-                <span><b class="status published">published</b></span>
-                <span>DW</span>
-                <span>05.13</span>
-                <span>comments noted</span>
-              </div>
-            </div>
+          <div class="dashboard-mock" aria-label="Influencer CRM dashboard preview">
+            <aside class="mock-sidebar">
+              <div class="mock-logo">CRM</div>
+              <div class="mock-folder is-active"><span>Campaign HQ</span><em>24</em></div>
+              <div class="mock-folder"><span>Seed list</span><em>18</em></div>
+              <div class="mock-folder"><span>Calendar</span><em>07</em></div>
+              <div class="mock-folder"><span>Reports</span><em>05</em></div>
+            </aside>
 
-            <div class="mock-insights">
-              <div>
-                <span class="mock-label">internal note</span>
-                <p>협업 조건과 진행 메모를 후보별로 기록합니다.</p>
-              </div>
-              <div>
-                <span class="mock-label">comment signal</span>
-                <p>허용된 데이터 범위 안에서 댓글 반응을 캠페인 단위로 정리합니다.</p>
-              </div>
-              <div>
-                <span class="mock-label">next publish</span>
-                <p>05.11 · lifestyle feed</p>
-              </div>
+            <div class="mock-main">
+              <section class="preview-panel is-active" id="preview-panel-dashboard" role="tabpanel" aria-labelledby="preview-tab-dashboard" data-preview-panel="dashboard">
+                <div class="mock-toolbar">
+                  <div>
+                    <span class="mock-label">overview</span>
+                    <strong>Campaign Operations Dashboard</strong>
+                  </div>
+                  <button type="button" class="mock-export">Export summary</button>
+                </div>
+                <div class="crm-stat-grid">
+                  <article><span>saved influencers</span><strong>128</strong><p>직접 저장한 후보 기준</p></article>
+                  <article><span>active campaigns</span><strong>6</strong><p>진행 중인 협업 캠페인</p></article>
+                  <article><span>upcoming posts</span><strong>14</strong><p>발행 예정 콘텐츠</p></article>
+                  <article><span>comment review</span><strong>ready</strong><p>허용된 범위 안의 반응 정리</p></article>
+                </div>
+                <div class="mock-insights">
+                  <div><span class="mock-label">next action</span><p>협의 중 후보 8명을 확정 또는 보류 상태로 정리합니다.</p></div>
+                  <div><span class="mock-label">schedule</span><p>이번 주 발행 예정 콘텐츠 5건의 링크 확인이 필요합니다.</p></div>
+                  <div><span class="mock-label">note</span><p>댓글 반응은 연결 계정의 승인된 데이터 범위 안에서만 정리합니다.</p></div>
+                </div>
+              </section>
+
+              <section class="preview-panel" id="preview-panel-list" role="tabpanel" aria-labelledby="preview-tab-list" data-preview-panel="list" hidden>
+                <div class="mock-toolbar">
+                  <div>
+                    <span class="mock-label">candidate management</span>
+                    <strong>Influencer List</strong>
+                  </div>
+                  <button type="button" class="mock-export">CSV/XLSX</button>
+                </div>
+                <div class="mock-table crm-list-table">
+                  <div class="mock-row mock-head"><span>ID</span><span>category</span><span>status</span><span>tags</span><span>memo</span></div>
+                  <div class="mock-row"><span><strong>@studio.muse</strong><small>beauty · reel</small></span><span>Beauty</span><span><b class="status in-progress">협의 중</b></span><span>#tone #reel</span><span>제품 사용 컷 강점</span></div>
+                  <div class="mock-row"><span><strong>@daily.object</strong><small>lifestyle · feed</small></span><span>Life</span><span><b class="status scheduled">발행 예정</b></span><span>#home #feed</span><span>일정 확인 완료</span></div>
+                  <div class="mock-row"><span><strong>@curated.room</strong><small>home · story</small></span><span>Home</span><span><b class="status published">발행 완료</b></span><span>#story #room</span><span>댓글 반응 정리 대기</span></div>
+                </div>
+              </section>
+
+              <section class="preview-panel" id="preview-panel-board" role="tabpanel" aria-labelledby="preview-tab-board" data-preview-panel="board" hidden>
+                <div class="mock-toolbar">
+                  <div>
+                    <span class="mock-label">campaign pipeline</span>
+                    <strong>Campaign Board</strong>
+                  </div>
+                  <button type="button" class="mock-export">Update status</button>
+                </div>
+                <div class="crm-board">
+                  <article><h3>후보 검토</h3><p>@raw.archive</p><p>@mini.table</p></article>
+                  <article><h3>섭외 예정</h3><p>@daily.object</p><p>@clean.note</p></article>
+                  <article><h3>협의 중</h3><p>@studio.muse</p><p>@leaf.room</p></article>
+                  <article><h3>발행 예정</h3><p>@curated.room</p><p>@slow.daily</p></article>
+                  <article><h3>발행 완료</h3><p>@one.frame</p><p>@light.goods</p></article>
+                </div>
+              </section>
+
+              <section class="preview-panel" id="preview-panel-calendar" role="tabpanel" aria-labelledby="preview-tab-calendar" data-preview-panel="calendar" hidden>
+                <div class="mock-toolbar">
+                  <div>
+                    <span class="mock-label">content schedule</span>
+                    <strong>Content Calendar</strong>
+                  </div>
+                  <button type="button" class="mock-export">Copy schedule</button>
+                </div>
+                <div class="crm-calendar">
+                  <div><span>06.04</span><strong>@studio.muse</strong><p>Reel 예정 · 제품 사용 컷</p><b class="status scheduled">scheduled</b></div>
+                  <div><span>06.07</span><strong>@daily.object</strong><p>Feed 예정 · 상세 링크 연결</p><b class="status in-progress">link check</b></div>
+                  <div><span>06.11</span><strong>@curated.room</strong><p>Story 발행 완료 · 게시물 링크 기록</p><b class="status published">published</b></div>
+                </div>
+              </section>
+
+              <section class="preview-panel" id="preview-panel-reaction" role="tabpanel" aria-labelledby="preview-tab-reaction" data-preview-panel="reaction" hidden>
+                <div class="mock-toolbar">
+                  <div>
+                    <span class="mock-label">comment signal</span>
+                    <strong>Comment / Reaction Analysis</strong>
+                  </div>
+                  <button type="button" class="mock-export">Download notes</button>
+                </div>
+                <div class="crm-reaction-grid">
+                  <article><span>comment count</span><strong>312</strong><p>연결 계정의 허용된 데이터 범위 기준</p></article>
+                  <article><span>keywords</span><strong>발색 · 사이즈 · 배송</strong><p>운영 메모용 키워드 정리</p></article>
+                  <article><span>classification</span><strong>positive 62%</strong><p>neutral 24% · question 14%</p></article>
+                </div>
+                <div class="crm-reaction-list">
+                  <p><span>positive</span> 제품 사용감과 컬러에 대한 긍정 반응이 반복됩니다.</p>
+                  <p><span>question</span> 구매처와 배송 일정 질문은 FAQ 답변으로 정리합니다.</p>
+                  <p><span>neutral</span> 단순 태그/이모지 반응은 운영 메모에서 별도 구분합니다.</p>
+                </div>
+              </section>
             </div>
           </div>
         </div>
@@ -262,5 +309,40 @@
     </div>
   </footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    const previewDescriptions = {
+      dashboard: "저장된 후보, 진행 중인 캠페인, 발행 예정 콘텐츠, 댓글 반응 정리 상태를 한 화면에서 확인합니다.",
+      list: "후보 ID, 카테고리, 협업 상태, 태그, 담당자 메모를 캠페인 기준으로 정리합니다.",
+      board: "후보 검토부터 발행 완료까지 협업 상태를 단계별로 옮겨가며 확인합니다.",
+      calendar: "예정일, 실제 발행일, 콘텐츠 링크, 확인 상태를 일정 흐름에 맞춰 관리합니다.",
+      reaction: "허용된 데이터 범위 안에서 댓글 수, 키워드, 긍정·중립·질문 반응을 운영 메모로 정리합니다."
+    };
+
+    document.querySelectorAll("[data-crm-preview]").forEach((preview) => {
+      const tabs = preview.querySelectorAll("[data-preview-tab]");
+      const panels = preview.querySelectorAll("[data-preview-panel]");
+      const description = preview.querySelector("[data-preview-description]");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.dataset.previewTab;
+
+          tabs.forEach((item) => {
+            const isActive = item === tab;
+            item.classList.toggle("is-active", isActive);
+            item.setAttribute("aria-selected", String(isActive));
+          });
+
+          panels.forEach((panel) => {
+            const isActive = panel.dataset.previewPanel === target;
+            panel.classList.toggle("is-active", isActive);
+            panel.hidden = !isActive;
+          });
+
+          if (description) description.textContent = previewDescriptions[target] || "";
+        });
+      });
+    });
+  </script>
 </body>
 </html>
