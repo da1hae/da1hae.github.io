@@ -1,22 +1,22 @@
 @import url("https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css");
 
 :root {
-  --bg: #f8faff;
+  --bg: #fbfaf7;
   --surface: #ffffff;
-  --surface-soft: #eef3ff;
-  --ink: #0f172a;
-  --muted: #5c6680;
-  --quiet: #8d98b6;
-  --line: #dce4f5;
-  --line-dark: #1d3158;
-  --cream: #f7fbff;
-  --dark: #071327;
-  --dark-soft: #101d3a;
-  --accent: #2d4f9f;
-  --accent-lime: #9bbcff;
-  --indigo: #182a63;
-  --midnight: #061127;
-  --sky-soft: #eef7ff;
+  --surface-soft: #f3f1eb;
+  --ink: #171716;
+  --muted: #69665f;
+  --quiet: #918b80;
+  --line: #e4e0d8;
+  --line-dark: #24231f;
+  --cream: #f8f4ec;
+  --dark: #151515;
+  --dark-soft: #24231f;
+  --accent: #4a473f;
+  --accent-lime: #c8ff3d;
+  --indigo: #25231f;
+  --midnight: #111111;
+  --sky-soft: #f6f4ee;
   --radius-lg: 12px;
   --radius-md: 6px;
 }
@@ -58,7 +58,7 @@ ul { list-style: none; }
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(6, 17, 39, 0.94);
+  background: rgba(21, 21, 21, 0.94);
   border-bottom: 1px solid rgba(246, 247, 245, 0.12);
   backdrop-filter: blur(18px);
 }
@@ -120,9 +120,9 @@ ul { list-style: none; }
   padding: 50px 0 42px;
   color: var(--cream);
   background:
-    radial-gradient(circle at 78% 10%, rgba(122, 147, 255, 0.22), transparent 31%),
-    radial-gradient(circle at 18% 0%, rgba(56, 95, 180, 0.26), transparent 34%),
-    linear-gradient(135deg, #061127 0%, #0b1b3b 46%, #182a63 100%);
+    radial-gradient(circle at 78% 10%, rgba(200, 255, 61, 0.11), transparent 30%),
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.08), transparent 32%),
+    linear-gradient(135deg, #151515 0%, #24231f 54%, #343229 100%);
   border-bottom: 0;
 }
 .hero:has(> .container:not(.hero-grid):not(.hero-main)) {
@@ -264,10 +264,10 @@ h1 {
   min-height: min(620px, calc(86svh - 68px));
   padding: 74px 0 64px;
   background:
-    linear-gradient(90deg, rgba(155, 188, 255, 0.07) 0, transparent 1px),
-    radial-gradient(circle at 82% 16%, rgba(111, 136, 255, 0.22), transparent 27%),
-    radial-gradient(circle at 12% 8%, rgba(53, 111, 196, 0.2), transparent 32%),
-    linear-gradient(135deg, #061127 0%, #0b1b3b 56%, #17265c 100%);
+    linear-gradient(90deg, rgba(248, 244, 236, 0.05) 0, transparent 1px),
+    radial-gradient(circle at 82% 16%, rgba(200, 255, 61, 0.12), transparent 27%),
+    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.08), transparent 32%),
+    linear-gradient(135deg, #151515 0%, #24231f 58%, #353229 100%);
   background-size: 96px 100%, auto, auto;
 }
 .home-hero-grid {
@@ -337,9 +337,9 @@ h1 {
   min-height: min(520px, calc(72svh - 68px));
   padding: 68px 0 58px;
   background:
-    linear-gradient(90deg, rgba(155, 188, 255, 0.06) 0, transparent 1px),
-    radial-gradient(circle at 84% 18%, rgba(111, 136, 255, 0.2), transparent 26%),
-    linear-gradient(135deg, #061127 0%, #0b1b3b 56%, #17265c 100%);
+    linear-gradient(90deg, rgba(248, 244, 236, 0.05) 0, transparent 1px),
+    radial-gradient(circle at 84% 18%, rgba(200, 255, 61, 0.1), transparent 26%),
+    linear-gradient(135deg, #151515 0%, #24231f 58%, #353229 100%);
   background-size: 96px 100%, auto, auto;
 }
 .services-hero-grid {
@@ -1980,8 +1980,8 @@ body.modal-open {
   margin: 0;
   padding: 58px 0;
   background:
-    radial-gradient(circle at 88% 12%, rgba(111, 136, 255, 0.16), transparent 30%),
-    linear-gradient(135deg, #061127 0%, #0b1b3b 58%, #17265c 100%);
+    radial-gradient(circle at 88% 12%, rgba(200, 255, 61, 0.1), transparent 30%),
+    linear-gradient(135deg, #151515 0%, #24231f 58%, #353229 100%);
   border-top: 0;
   border-bottom: 0;
 }
