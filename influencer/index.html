@@ -132,13 +132,16 @@
           </div>
         </div>
 
-        <div class="crm-preview" data-crm-preview>
-          <div class="preview-tabs" role="tablist" aria-label="Influencer CRM preview screens">
-            <button class="preview-tab is-active" type="button" id="preview-tab-dashboard" role="tab" aria-selected="true" aria-controls="preview-panel-dashboard" data-preview-tab="dashboard">Dashboard</button>
-            <button class="preview-tab" type="button" id="preview-tab-list" role="tab" aria-selected="false" aria-controls="preview-panel-list" data-preview-tab="list">Influencer List</button>
-            <button class="preview-tab" type="button" id="preview-tab-board" role="tab" aria-selected="false" aria-controls="preview-panel-board" data-preview-tab="board">Campaign Board</button>
-            <button class="preview-tab" type="button" id="preview-tab-calendar" role="tab" aria-selected="false" aria-controls="preview-panel-calendar" data-preview-tab="calendar">Content Calendar</button>
-            <button class="preview-tab" type="button" id="preview-tab-reaction" role="tab" aria-selected="false" aria-controls="preview-panel-reaction" data-preview-tab="reaction">Comment / Reaction</button>
+        <div class="crm-preview" data-crm-carousel>
+          <div class="preview-carousel-head">
+            <div>
+              <span class="mock-label" data-slide-kicker>Dashboard</span>
+              <h3 data-slide-title>Campaign Operations Dashboard</h3>
+            </div>
+            <div class="preview-arrows" aria-label="Influencer CRM preview controls">
+              <button class="preview-arrow" type="button" aria-label="이전 화면" data-carousel-prev>Prev</button>
+              <button class="preview-arrow" type="button" aria-label="다음 화면" data-carousel-next>Next</button>
+            </div>
           </div>
 
           <p class="preview-description" data-preview-description>저장된 후보, 진행 중인 캠페인, 발행 예정 콘텐츠, 댓글 반응 정리 상태를 한 화면에서 확인합니다.</p>
@@ -153,7 +156,7 @@
             </aside>
 
             <div class="mock-main">
-              <section class="preview-panel is-active" id="preview-panel-dashboard" role="tabpanel" aria-labelledby="preview-tab-dashboard" data-preview-panel="dashboard">
+              <section class="preview-panel is-active" data-preview-slide="dashboard" data-slide-label="Dashboard" data-slide-title="Campaign Operations Dashboard" data-slide-description="저장된 인플루언서, 진행 중 캠페인, 발행 예정 콘텐츠, 댓글 분석 상태를 한눈에 확인합니다.">
                 <div class="mock-toolbar">
                   <div>
                     <span class="mock-label">overview</span>
@@ -174,7 +177,7 @@
                 </div>
               </section>
 
-              <section class="preview-panel" id="preview-panel-list" role="tabpanel" aria-labelledby="preview-tab-list" data-preview-panel="list" hidden>
+              <section class="preview-panel" data-preview-slide="list" data-slide-label="Influencer List" data-slide-title="Influencer List" data-slide-description="후보 계정, 카테고리, 상태값, 태그, 담당자, 메모를 정리합니다." hidden>
                 <div class="mock-toolbar">
                   <div>
                     <span class="mock-label">candidate management</span>
@@ -190,7 +193,7 @@
                 </div>
               </section>
 
-              <section class="preview-panel" id="preview-panel-board" role="tabpanel" aria-labelledby="preview-tab-board" data-preview-panel="board" hidden>
+              <section class="preview-panel" data-preview-slide="board" data-slide-label="Campaign Board" data-slide-title="Campaign Board" data-slide-description="후보 검토부터 섭외, 협의, 발행 완료까지 캠페인 진행 상태를 관리합니다." hidden>
                 <div class="mock-toolbar">
                   <div>
                     <span class="mock-label">campaign pipeline</span>
@@ -207,7 +210,7 @@
                 </div>
               </section>
 
-              <section class="preview-panel" id="preview-panel-calendar" role="tabpanel" aria-labelledby="preview-tab-calendar" data-preview-panel="calendar" hidden>
+              <section class="preview-panel" data-preview-slide="calendar" data-slide-label="Content Calendar" data-slide-title="Content Calendar" data-slide-description="발행 예정일, 실제 발행일, 콘텐츠 링크와 상태를 일정 기준으로 확인합니다." hidden>
                 <div class="mock-toolbar">
                   <div>
                     <span class="mock-label">content schedule</span>
@@ -222,7 +225,7 @@
                 </div>
               </section>
 
-              <section class="preview-panel" id="preview-panel-reaction" role="tabpanel" aria-labelledby="preview-tab-reaction" data-preview-panel="reaction" hidden>
+              <section class="preview-panel" data-preview-slide="reaction" data-slide-label="Comment / Reaction Analysis" data-slide-title="Comment / Reaction Analysis" data-slide-description="댓글 수, 키워드, 긍정·중립·질문 반응을 운영 메모로 정리합니다." hidden>
                 <div class="mock-toolbar">
                   <div>
                     <span class="mock-label">comment signal</span>
@@ -242,6 +245,13 @@
                 </div>
               </section>
             </div>
+          </div>
+          <div class="preview-dots" aria-label="Influencer CRM preview slide indicators">
+            <button class="preview-dot is-active" type="button" aria-label="Dashboard 화면 보기" aria-current="true" data-carousel-dot="0"></button>
+            <button class="preview-dot" type="button" aria-label="Influencer List 화면 보기" data-carousel-dot="1"></button>
+            <button class="preview-dot" type="button" aria-label="Campaign Board 화면 보기" data-carousel-dot="2"></button>
+            <button class="preview-dot" type="button" aria-label="Content Calendar 화면 보기" data-carousel-dot="3"></button>
+            <button class="preview-dot" type="button" aria-label="Comment / Reaction Analysis 화면 보기" data-carousel-dot="4"></button>
           </div>
         </div>
         <p class="preview-caption">* 제품 구조 이해를 위한 예시 화면이며, 실제 제공 범위는 베타 운영 및 정책 검토에 따라 조정될 수 있습니다.</p>
@@ -308,40 +318,75 @@
       <div class="footer-links"><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a></div>
     </div>
   </footer>
+  <button class="top-button" type="button" aria-label="맨 위로 이동">TOP</button>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script>
-    const previewDescriptions = {
-      dashboard: "저장된 후보, 진행 중인 캠페인, 발행 예정 콘텐츠, 댓글 반응 정리 상태를 한 화면에서 확인합니다.",
-      list: "후보 ID, 카테고리, 협업 상태, 태그, 담당자 메모를 캠페인 기준으로 정리합니다.",
-      board: "후보 검토부터 발행 완료까지 협업 상태를 단계별로 옮겨가며 확인합니다.",
-      calendar: "예정일, 실제 발행일, 콘텐츠 링크, 확인 상태를 일정 흐름에 맞춰 관리합니다.",
-      reaction: "허용된 데이터 범위 안에서 댓글 수, 키워드, 긍정·중립·질문 반응을 운영 메모로 정리합니다."
-    };
+    const topButton = document.querySelector(".top-button");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const updateTopButton = () => topButton?.classList.toggle("is-visible", window.scrollY > 160);
+    updateTopButton();
+    window.addEventListener("scroll", updateTopButton, { passive: true });
+    topButton?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" }));
+  </script>
+  <script>
+    document.querySelectorAll("[data-crm-carousel]").forEach((carousel) => {
+      const slides = [...carousel.querySelectorAll("[data-preview-slide]")];
+      const dots = [...carousel.querySelectorAll("[data-carousel-dot]")];
+      const description = carousel.querySelector("[data-preview-description]");
+      const title = carousel.querySelector("[data-slide-title]");
+      const kicker = carousel.querySelector("[data-slide-kicker]");
+      const previous = carousel.querySelector("[data-carousel-prev]");
+      const next = carousel.querySelector("[data-carousel-next]");
+      const viewport = carousel.querySelector(".dashboard-mock");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let activeIndex = 0;
+      let startX = null;
+      let timer = null;
 
-    document.querySelectorAll("[data-crm-preview]").forEach((preview) => {
-      const tabs = preview.querySelectorAll("[data-preview-tab]");
-      const panels = preview.querySelectorAll("[data-preview-panel]");
-      const description = preview.querySelector("[data-preview-description]");
-
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const target = tab.dataset.previewTab;
-
-          tabs.forEach((item) => {
-            const isActive = item === tab;
-            item.classList.toggle("is-active", isActive);
-            item.setAttribute("aria-selected", String(isActive));
-          });
-
-          panels.forEach((panel) => {
-            const isActive = panel.dataset.previewPanel === target;
-            panel.classList.toggle("is-active", isActive);
-            panel.hidden = !isActive;
-          });
-
-          if (description) description.textContent = previewDescriptions[target] || "";
+      const showSlide = (index, userInitiated = false) => {
+        activeIndex = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          const isActive = slideIndex === activeIndex;
+          slide.classList.toggle("is-active", isActive);
+          slide.hidden = !isActive;
         });
+        dots.forEach((dot, dotIndex) => {
+          const isActive = dotIndex === activeIndex;
+          dot.classList.toggle("is-active", isActive);
+          dot.setAttribute("aria-current", isActive ? "true" : "false");
+        });
+        const current = slides[activeIndex];
+        if (description) description.textContent = current.dataset.slideDescription || "";
+        if (title) title.textContent = current.dataset.slideTitle || "";
+        if (kicker) kicker.textContent = current.dataset.slideLabel || "";
+        if (userInitiated) stopAuto();
+      };
+
+      const stopAuto = () => {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+      };
+
+      const startAuto = () => {
+        if (reduceMotion) return;
+        timer = window.setInterval(() => showSlide(activeIndex + 1), 5000);
+      };
+
+      previous?.addEventListener("click", () => showSlide(activeIndex - 1, true));
+      next?.addEventListener("click", () => showSlide(activeIndex + 1, true));
+      dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index, true)));
+
+      viewport?.addEventListener("pointerdown", (event) => { startX = event.clientX; });
+      viewport?.addEventListener("pointerup", (event) => {
+        if (startX === null) return;
+        const diff = event.clientX - startX;
+        startX = null;
+        if (Math.abs(diff) < 44) return;
+        showSlide(activeIndex + (diff < 0 ? 1 : -1), true);
       });
+
+      showSlide(0);
+      startAuto();
     });
   </script>
 </body>
