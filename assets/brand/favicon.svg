@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+<title id="title">Dawon Hae STUDIO</title>
+<desc id="desc">Charcoal D with a cobalt blue full stop on white.</desc>
+<rect x=".5" y=".5" width="63" height="63" rx="13.5" fill="#fff" stroke="#dedfe3"/>
+<path d="M10 11 L25 11 C39 11 47 19 47 32 C47 45 39 53 25 53 L10 53Z" fill="#202127"/>
+<path d="M21 21 L25 21 C32 21 36 25 36 32 C36 39 32 43 25 43 L21 43Z" fill="#fff"/>
+<circle cx="54" cy="48" r="5" fill="#1c46f5"/>
+</svg>
