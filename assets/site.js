@@ -53,7 +53,7 @@
   let busy = false;
   if (liveSubmission) {
     submitLabel.textContent = '문의 보내기';
-    notice.textContent = '남겨주신 연락처로 협업 가능한 범위와 일정을 안내드립니다.';
+    // Keep the existing privacy-policy link beside the live form.
   } else {
     submitLabel.textContent = '문의 내용 확인하기';
     notice.textContent = '로컬 미리보기에서는 문의가 전송되지 않습니다.';
@@ -122,6 +122,7 @@
       status.hidden = false;
       try {
         await transport.submit(payload);
+        try { window.DawonAnalytics?.lead(service.value); } catch (_) { /* Delivery already succeeded. */ }
         success.querySelector('h2').textContent = '문의가 접수되었습니다.';
         document.getElementById('confirmation-note').textContent = '남겨주신 연락처로 협업 범위와 일정을 안내드립니다.';
         status.hidden = true;
