@@ -1,10 +1,11 @@
 /* A quieter studio identity and a shorter route from need to offer. */
-:root { --paper:#fff; --soft:#f6f5f1; --ink:#22252a; --muted:#5c626b; --line:#dedfdc; --blue:#2548eb; --lime:#fff; --highlight:#fff; }
+:root { --paper:#fff; --soft:#f6f5f1; --ink:#22252a; --muted:#5c626b; --line:#dedfdc; --blue:#2548eb; --lime:#fff; --highlight:#fff; --blue-hover:#1936bd; --accent-soft:#eef1ff; }
 .nav-links { gap:26px; }
 .nav { min-height:92px; }
 .nav-links .nav-contact { background:var(--blue); border-radius:4px; }
-.button { border-radius:5px; transition:background-color .15s,color .15s; }
-.button:hover { background:#353a43; }
+.button { border-radius:5px; background:var(--blue); border-color:var(--blue); transition:background-color .15s,color .15s; }
+.button:hover { background:var(--blue-hover); border-color:var(--blue-hover); }
+.button.secondary { background:transparent; color:var(--ink); border-color:var(--line); }
 .button.secondary:hover { color:var(--ink); background:#eeefeb; }
 .monthly-hero { padding:64px 0 72px; background:var(--soft); }
 .hero-composition { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); gap:48px; align-items:center; }
@@ -40,7 +41,6 @@
 .offers-section .section-head p { margin-top:14px; }
 .offer-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; align-items:stretch; }
 .offer-card { display:flex; flex-direction:column; min-width:0; padding:28px 24px; border:1px solid var(--line); border-radius:5px; background:white; scroll-margin-top:28px; }
-.offer-featured { border-top:3px solid var(--blue); padding-top:26px; }
 .offer-top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; color:var(--muted); font-size:9px; letter-spacing:.025em; }
 .offer-top>span:last-child { font-size:11px; }
 .offer-audience { color:var(--muted); font-size:13px; line-height:1.65; margin-top:25px; min-height:44px; }
@@ -51,8 +51,9 @@
 .offer-outputs li::before { content:'·'; position:absolute; left:0; color:var(--blue); }
 .offer-link { display:flex; align-items:center; justify-content:space-between; padding:12px 0 0; margin-top:auto; color:var(--blue); font-weight:600; font-size:14px; }
 .offer-link>span { font-size:24px; }
-.offer-card>.button { margin-top:auto; width:100%; background:var(--ink); color:white; font-size:14px; }
-.offer-featured>.button { background:var(--blue); border-color:var(--blue); }
+.offer-card>.button { margin-top:auto; width:100%; background:var(--blue); border-color:var(--blue); color:white; font-size:14px; }
+.offer-card>.button:hover,.article-service .button:hover { background:var(--blue-hover); border-color:var(--blue-hover); }
+.article-service .button { background:var(--blue); border-color:var(--blue); }
 .offers-footnote { margin-top:24px; font-size:13px; color:var(--muted); }
 .service-cover { background:var(--soft); color:var(--ink); }
 .service-cover .eyebrow { color:var(--blue); }
@@ -215,7 +216,6 @@
  .operation-section h2,.offers-section h2 { font-size:28px; }
  .offers-section .section-head p { font-size:14px; }
  .offer-card { padding:24px; }
- .offer-featured { padding-top:22px; }
  .offer-card h3 { font-size:25px; }
  .service-offers { padding-block:26px 40px; }
  .service-process .engagement-step { padding-bottom:24px; gap:16px; }
@@ -268,3 +268,12 @@
  .editorial-section { margin-top:36px; }
 }
 @media(prefers-reduced-motion:reduce) { .button { transition:none; } }
+
+/* One accent for actions and current state; neutral surfaces for equivalent offers. */
+.nav-links .nav-contact:hover { color:white; background:var(--blue-hover); }
+.nav-links .nav-contact[aria-current=page] { color:white; text-decoration:underline; text-underline-offset:5px; }
+.offer-outputs li::before { color:var(--muted); }
+.next-paper { background:var(--soft); color:var(--ink); border:1px solid var(--line); }
+.calendar-event,.delivery-badge.blue-badge { background:var(--accent-soft); color:var(--blue); border-color:#d6defc; }
+.contact-band :where(a,button):focus-visible { outline-color:white; }
+@media(max-width:640px) { .delivery-summary strong { font-size:clamp(22px,6vw,28px); word-break:keep-all; overflow-wrap:normal; } }

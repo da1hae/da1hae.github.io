@@ -43,15 +43,15 @@
       ]
     }
   </script>
-<link rel="icon" href="/favicon.ico?v=a33e666567" sizes="16x16 32x32 48x48 64x64 128x128 256x256"><link rel="icon" href="/assets/brand/favicon.svg?v=a33e666567" type="image/svg+xml" sizes="any"><link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png?v=a33e666567" sizes="180x180"><style>.site-header .wordmark{display:flex;flex-direction:column;align-items:flex-start;gap:5px}.site-header .wordmark-main{white-space:nowrap;font-size:23px;letter-spacing:-1px;line-height:1}.site-header .wordmark-sub{white-space:nowrap;font-size:10px;letter-spacing:0;line-height:1.4}</style><link rel="stylesheet" href="/assets/editorial.css?v=ddcc275d3a"><link rel="stylesheet" href="/assets/refinement.css?v=50a53edfc9"></head>
-<body>
-  <header class="site-header"><div class="wrap"><nav class="nav" aria-label="메인 메뉴">
+<link rel="icon" href="/favicon.ico?v=a33e666567" sizes="16x16 32x32 48x48 64x64 128x128 256x256"><link rel="icon" href="/assets/brand/favicon.svg?v=a33e666567" type="image/svg+xml" sizes="any"><link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png?v=a33e666567" sizes="180x180"><style>.site-header .wordmark{display:flex;flex-direction:column;align-items:flex-start;gap:5px}.site-header .wordmark-main{white-space:nowrap;font-size:23px;letter-spacing:-1px;line-height:1}.site-header .wordmark-sub{white-space:nowrap;font-size:10px;letter-spacing:0;line-height:1.4}</style><link rel="stylesheet" href="/assets/editorial.css?v=593f48b682"><link rel="stylesheet" href="/assets/refinement.css?v=3e942a3368"><link rel="stylesheet" href="/assets/legacy-shell.css?v=ee87df82ae"><script defer src="/assets/site.js?v=eae1d4e7ae"></script></head>
+<body class="legacy-page">
+  <a class="skip" href="#main">본문으로 건너뛰기</a><header class="site-header"><div class="wrap"><nav class="nav" aria-label="메인 메뉴">
 <a class="wordmark" href="/" aria-label="다원해 스튜디오 홈"><span>DAWONHAE<b>.</b></span><small>1인 마케팅 스튜디오</small></a>
 <button class="menu-toggle" type="button" aria-controls="main-menu" aria-expanded="false" data-menu-toggle>메뉴 <span aria-hidden="true">+</span></button>
 <div class="nav-links" id="main-menu" data-menu><a href="/services/">Service</a><a href="/about/">Studio</a><a href="/notes/">Notes</a><a href="/faq/">FAQ</a><a class="nav-contact" href="/contact/">Contact <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
 </nav></div></header>
 
-  <main class="influencer-page">
+  <main id="main" tabindex="-1" class="influencer-page">
     <section class="hero influencer-hero">
       <div class="container hero-grid influencer-hero-grid">
         <div class="hero-main">
@@ -150,7 +150,7 @@
                     <span class="mock-label">overview</span>
                     <strong>Campaign Operations Dashboard</strong>
                   </div>
-                  <button type="button" class="mock-export">Export summary</button>
+                  <span class="mock-export" aria-hidden="true">Export summary</span>
                 </div>
                 <div class="crm-stat-grid">
                   <article><span>saved influencers</span><strong>128</strong><p>직접 저장한 후보 기준</p></article>
@@ -171,7 +171,7 @@
                     <span class="mock-label">candidate management</span>
                     <strong>Influencer List</strong>
                   </div>
-                  <button type="button" class="mock-export">CSV/XLSX</button>
+                  <span class="mock-export" aria-hidden="true">CSV/XLSX</span>
                 </div>
                 <div class="mock-table crm-list-table">
                   <div class="mock-row mock-head"><span>ID</span><span>category</span><span>status</span><span>tags</span><span>memo</span></div>
@@ -187,7 +187,7 @@
                     <span class="mock-label">campaign pipeline</span>
                     <strong>Campaign Board</strong>
                   </div>
-                  <button type="button" class="mock-export">Update status</button>
+                  <span class="mock-export" aria-hidden="true">Update status</span>
                 </div>
                 <div class="crm-board">
                   <article><h3>후보 검토</h3><p>@raw.archive</p><p>@mini.table</p></article>
@@ -204,7 +204,7 @@
                     <span class="mock-label">content schedule</span>
                     <strong>Content Calendar</strong>
                   </div>
-                  <button type="button" class="mock-export">Copy schedule</button>
+                  <span class="mock-export" aria-hidden="true">Copy schedule</span>
                 </div>
                 <div class="crm-calendar">
                   <div><span>06.04</span><strong>@studio.muse</strong><p>Reel 예정 · 제품 사용 컷</p><b class="status scheduled">scheduled</b></div>
@@ -219,7 +219,7 @@
                     <span class="mock-label">comment signal</span>
                     <strong>Comment / Reaction Analysis</strong>
                   </div>
-                  <button type="button" class="mock-export">Download notes</button>
+                  <span class="mock-export" aria-hidden="true">Download notes</span>
                 </div>
                 <div class="crm-reaction-grid">
                   <article><span>comment count</span><strong>312</strong><p>연결 계정의 허용된 데이터 범위 기준</p></article>
@@ -301,7 +301,7 @@
 
   <footer class="minimal-footer"><div class="minimal-footer-inner"><span>© 2026 디원트</span><span>사업자등록번호 823-06-03931</span><nav aria-label="법적 고지"><a href="https://da1hae.xyz/privacy/">개인정보처리방침</a><a href="https://da1hae.xyz/terms/">이용약관</a></nav></div></footer>
   <button class="top-button" type="button" aria-label="맨 위로 이동">TOP</button>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  
   <script>
     const topButton = document.querySelector(".top-button");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
