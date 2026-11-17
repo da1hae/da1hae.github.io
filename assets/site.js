@@ -76,7 +76,8 @@
     service: '필요한 업무를 선택해 주세요. 미정이라면 상담 후 결정을 선택할 수 있습니다.',
     name: '브랜드명과 담당자명을 입력해 주세요.',
     email: '답변 받을 이메일 주소를 확인해 주세요.',
-    phone: '연락 가능한 전화번호를 입력해 주세요.',
+    phone: '연락 가능한 전화번호를 숫자 7~15자리로 입력해 주세요.',
+    brand_url: 'https://를 포함한 링크를 입력해 주세요.',
     message: '현재 운영 상황과 필요한 업무를 입력해 주세요.'
   };
   const clearError = field => {
@@ -99,7 +100,9 @@
     fields.forEach(field => {
       clearError(field);
       const blank = field.required && !field.value.trim();
-      if (blank || !field.checkValidity()) {
+      const invalidPhone = field.name === 'phone' && !/^\+?[\d\s().-]+$/.test(field.value.trim());
+      const phoneDigits = field.name === 'phone' ? field.value.replace(/\D/g, '').length : 0;
+      if (blank || !field.checkValidity() || invalidPhone || (field.name === 'phone' && (phoneDigits < 7 || phoneDigits > 15))) {
         field.setAttribute('aria-invalid', 'true');
         const error = document.getElementById(`${field.id}-error`);
         if (error) {
@@ -109,7 +112,12 @@
         firstInvalid ||= field;
       }
     });
-    if (firstInvalid) { firstInvalid.focus(); return; }
+    if (firstInvalid) {
+      let parent = firstInvalid.closest('details');
+      while (parent) { parent.open = true; parent = parent.parentElement?.closest('details'); }
+      firstInvalid.focus();
+      return;
+    }
     document.getElementById('confirmed-collaboration').textContent = collaboration.selectedOptions[0].textContent;
     document.getElementById('confirmed-service').textContent = service.selectedOptions[0].textContent;
     const values = Object.fromEntries(new FormData(form));

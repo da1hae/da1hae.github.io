@@ -5,6 +5,7 @@
   const steps = [...flow.querySelectorAll('[data-process-step]')];
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
   let started = false;
+  let inView = false;
   const timers = new Set();
 
   const highlight = index => {
@@ -18,29 +19,35 @@
     timers.forEach(clearTimeout);
     timers.clear();
     flow.dataset.playing = 'false';
+    flow.dataset.phase = '0';
+    steps.forEach(step => step.classList.remove('is-highlighted', 'is-passed'));
   };
   const start = () => {
     if (started || preference.matches || document.hidden) return;
     started = true;
     flow.dataset.playing = 'true';
-    // Explain the order once in 3.9 seconds; keep all copy visible and still.
+    highlight(0);
+    // Explain the order once, then return every step to the same neutral state.
     steps.slice(1).forEach((_, index) => {
       const timer = setTimeout(() => {
         timers.delete(timer);
         highlight(index + 1);
-        if (index === steps.length - 2) stop();
       }, (index + 1) * 1300);
       timers.add(timer);
     });
+    timers.add(setTimeout(stop, steps.length * 1300 - 600));
   };
 
-  highlight(0);
-  flow.dataset.playing = 'false';
+  stop();
   const observer = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) start();
+    inView = entries[0].isIntersecting;
+    if (inView) start();
     else stop();
   }, { threshold: 0.35 });
   observer.observe(flow);
   preference.addEventListener('change', () => { if (preference.matches) stop(); });
-  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else if (inView) start();
+  });
 })();

@@ -1,0 +1,38 @@
+/* Shared navigation for preserved policy and CRM page bodies. */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+.legacy-page { --bg:#fff; --cream:#fff; --accent:var(--blue); --indigo:var(--blue); }
+.legacy-page .site-header { position:relative; z-index:10; background:#fff; border:0; backdrop-filter:none; font-family:Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif; }
+.legacy-page .site-header .wrap { width:min(100%,1280px); padding-inline:64px; margin-inline:auto; }
+.legacy-page .nav { display:flex; flex-direction:row; padding:0; justify-content:space-between; align-items:center; min-height:92px; gap:24px; border-bottom:1px solid var(--line); }
+.legacy-page .site-header .wordmark { display:flex; flex-direction:row; align-items:end; gap:12px; font-size:25px; font-weight:900; line-height:.92; letter-spacing:-1.4px; text-align:left; }
+.legacy-page .wordmark b { color:var(--blue); }
+.legacy-page .wordmark small { font-size:9px; font-weight:600; line-height:1.4; letter-spacing:1.2px; padding-bottom:1px; }
+.legacy-page .nav-links { display:flex; align-items:center; gap:26px; font-size:15px; font-weight:600; color:var(--ink); }
+.legacy-page .nav-links>a { display:inline-flex; align-items:center; min-height:48px; border:0; }
+.legacy-page .nav-links>a:hover { color:var(--blue); }
+.legacy-page .nav-links .nav-contact { gap:20px; background:var(--blue); color:white; padding:11px 18px; border-radius:4px; }
+.legacy-page .nav-links .nav-contact:hover { background:var(--blue-hover); color:white; }
+.legacy-page .menu-toggle { display:none; min-width:48px; min-height:48px; border:0; background:transparent; font:inherit; font-size:14px; color:var(--ink); cursor:pointer; }
+.legacy-page .menu-toggle span { font-size:24px; margin-left:10px; }
+.legacy-page .site-header .arrow { width:23px; height:23px; flex:none; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.legacy-page .skip { position:absolute; left:20px; top:-80px; z-index:30; padding:12px 16px; background:var(--ink); color:white; font-family:Pretendard,sans-serif; }
+.legacy-page .skip:focus { top:12px; }
+.legacy-page :where(a,button,summary):focus-visible { outline:3px solid var(--blue); outline-offset:4px; }
+.legacy-page [hidden] { display:none!important; }
+@media(max-width:1100px) {
+ .legacy-page .site-header .wrap { padding-inline:40px; }
+ .legacy-page .wordmark small { display:none; }
+ .legacy-page .nav-links { gap:20px; }
+}
+@media(max-width:640px) {
+ .legacy-page .site-header .wrap { padding-inline:24px; }
+ .legacy-page .nav { min-height:76px; gap:16px; }
+ .legacy-page .site-header .wordmark { font-size:24px; }
+ .legacy-page .menu-toggle { display:inline-flex; align-items:center; justify-content:end; }
+ .legacy-page .nav-links { display:none; position:absolute; top:76px; inset-inline:0; flex-direction:column; align-items:stretch; gap:0; padding:12px 24px 24px; background:#fff; border-bottom:1px solid var(--line); }
+ .legacy-page .nav-links.is-open { display:flex; }
+ .legacy-page .nav-links>a { font-size:18px; padding-block:14px; border-bottom:1px solid var(--line); }
+ .legacy-page .nav-links .nav-contact { margin-top:14px; border-bottom:0; font-size:16px; }
+}
+@media(max-width:360px) { .legacy-page .site-header .wrap { padding-inline:20px; } }
+@media(prefers-reduced-motion:reduce) { .legacy-page { scroll-behavior:auto; } }
