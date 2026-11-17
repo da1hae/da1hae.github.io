@@ -5,7 +5,7 @@
     try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return; }
     if (!id) return;
     const target = document.getElementById(id);
-    const detail = target?.closest('details[data-service-detail]');
+    const detail = target?.closest('details[data-service-detail], details#working-process');
     if (!detail) return;
     detail.open = true;
     let parent = detail.parentElement?.closest('details');
