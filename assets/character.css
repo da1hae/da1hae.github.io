@@ -1,12 +1,18 @@
-/* The illustration stays still; only the two registered eyelids change. */
+/* Registered cels, brief motion, then a still portrait. */
 .about-character { position:relative; max-height:none; aspect-ratio:1; }
-.about-character > img { display:block; width:100%; height:auto; }
+.character-pose { position:absolute; inset:0; opacity:0; pointer-events:none; transition:opacity 150ms cubic-bezier(.77,0,.175,1); }
+.character-pose>img { display:block; width:100%; height:auto; }
+.about-character[data-pose=side] [data-pose-frame=side],
+.about-character[data-pose=turn] [data-pose-frame=turn],
+.about-character[data-pose=front] [data-pose-frame=front] { opacity:1; }
 .character-eyelids { position:absolute; inset:0; width:100%; height:100%; opacity:0; pointer-events:none; }
-.about-character.is-blinking .character-eyelids { animation:character-blink 220ms ease-in-out both; }
-@keyframes character-blink {
-  0%, 100% { opacity:0; }
-  35%, 65% { opacity:1; }
-}
+.about-character.is-blinking .character-eyelids { animation:character-blink 150ms ease-in-out both; }
+@keyframes character-blink { 0%,100% { opacity:0; } 35%,65% { opacity:1; } }
+.character-replay { position:absolute; right:8px; bottom:-28px; display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:8px; border:0; background:transparent; color:var(--muted,#555c68); font-size:12px; text-decoration:underline; text-underline-offset:4px; }
+.character-replay>span { font-size:18px; text-decoration:none; }
+.character-replay[aria-disabled=true] { cursor:default; }
 @media (prefers-reduced-motion:reduce) {
-  .about-character.is-blinking .character-eyelids { animation:none; opacity:0; }
+ .character-pose { transition:none; }
+ .about-character.is-blinking .character-eyelids { animation:none; opacity:0; }
+ .character-replay { display:none; }
 }
