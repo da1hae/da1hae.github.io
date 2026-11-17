@@ -72,7 +72,9 @@
   const success = document.getElementById('form-success');
   const fields = [...form.querySelectorAll('input,textarea,select')];
   const messages = {
-    name: '이름 또는 브랜드명을 입력해 주세요.',
+    collaboration: '협업 방식을 선택해 주세요. 미정이라면 상담 후 결정을 선택할 수 있습니다.',
+    service: '필요한 업무를 선택해 주세요. 미정이라면 상담 후 결정을 선택할 수 있습니다.',
+    name: '브랜드명과 담당자명을 입력해 주세요.',
     email: '답변 받을 이메일 주소를 확인해 주세요.',
     phone: '연락 가능한 전화번호를 입력해 주세요.',
     message: '현재 운영 상황과 필요한 업무를 입력해 주세요.'

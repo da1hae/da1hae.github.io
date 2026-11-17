@@ -8,6 +8,8 @@
     const detail = target?.closest('details[data-service-detail]');
     if (!detail) return;
     detail.open = true;
+    let parent = detail.parentElement?.closest('details');
+    while (parent) { parent.open = true; parent = parent.parentElement?.closest('details'); }
     requestAnimationFrame(() => detail.scrollIntoView({block:'start', behavior:'instant'}));
   };
   window.addEventListener('hashchange', reveal);
