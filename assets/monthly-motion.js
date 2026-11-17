@@ -6,10 +6,11 @@
   const tablist = demo.querySelector('[role=tablist]');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const horizontal = matchMedia('(max-width:900px)');
-  const timers = new Set();
-  let started = false, stopped = motion.matches, frame;
+  const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+  let index = 0, timer = null, frame, visible = false, hovered = false, selected = false;
   const orient = () => tablist.setAttribute('aria-orientation', horizontal.matches ? 'horizontal' : 'vertical');
-  const show = (index, instant = false) => {
+  const show = (next, instant = false) => {
+    index = next;
     cancelAnimationFrame(frame);
     demo.classList.toggle('motion-instant', instant);
     demo.dataset.phase = String(index + 1);
@@ -20,37 +21,22 @@
     });
     if (instant) frame = requestAnimationFrame(() => demo.classList.remove('motion-instant'));
   };
-  const stop = (mode = 'settled') => {
-    stopped = true;
-    timers.forEach(clearTimeout);
-    timers.clear();
-    demo.dataset.playing = 'false';
-    demo.dataset.demoMode = mode;
-    tabs.forEach(tab => tab.classList.remove('is-previewed'));
-  };
-  const play = () => {
-    if (started || stopped || motion.matches || document.hidden) return;
-    started = true;
+  const stop = () => { clearTimeout(timer); timer = null; demo.dataset.playing = 'false'; };
+  const ready = () => visible && !hovered && !selected && !motion.matches && !document.hidden;
+  const schedule = () => {
+    stop();
+    if (!ready()) return;
     demo.dataset.playing = 'true';
-    demo.dataset.demoMode = 'preview';
-    // Introduce the timeline without replacing the panel someone is reading.
-    tabs.forEach((tab, i) => {
-      const timer = setTimeout(() => {
-        timers.delete(timer);
-        if (stopped) return;
-        tabs.forEach(item => item.classList.remove('is-previewed'));
-        tab.classList.add('is-previewed');
-      }, i * 950);
-      timers.add(timer);
-    });
-    const finish = setTimeout(() => stop(), 3900);
-    timers.add(finish);
+    timer = setTimeout(() => {
+      timer = null;
+      if (!ready()) { stop(); return; }
+      show((index + 1) % tabs.length);
+      schedule();
+    }, 4800);
   };
+  const select = () => { selected = true; stop(); };
   tabs.forEach((tab, i) => {
-    tab.addEventListener('click', event => {
-      stop('selected');
-      show(i, event.detail === 0 || motion.matches);
-    });
+    tab.addEventListener('click', event => { select(); show(i, event.detail === 0 || motion.matches); });
     tab.addEventListener('keydown', event => {
       const previous = horizontal.matches ? 'ArrowLeft' : 'ArrowUp';
       const next = horizontal.matches ? 'ArrowRight' : 'ArrowDown';
@@ -60,22 +46,20 @@
       if (event.key === 'Home') target = 0;
       if (event.key === 'End') target = tabs.length - 1;
       if (target === undefined) return;
-      event.preventDefault();
-      stop('selected');
-      show(target, true);
-      tabs[target].focus();
+      event.preventDefault(); select(); show(target, true); tabs[target].focus();
     });
   });
-  demo.addEventListener('focusin', () => stop('selected'));
-  motion.addEventListener('change', () => { if (motion.matches) stop(); });
+  demo.addEventListener('focusin', select);
+  demo.addEventListener('pointerdown', select);
+  demo.addEventListener('pointerenter', () => { if (finePointer.matches) { hovered = true; stop(); } });
+  demo.addEventListener('pointerleave', () => { hovered = false; schedule(); });
+  motion.addEventListener('change', schedule);
   horizontal.addEventListener('change', orient);
-  document.addEventListener('visibilitychange', () => { if (document.hidden && started) stop(); });
-  new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) play();
-    else if (started) stop();
-  }, { threshold: .2 }).observe(demo);
-  orient();
-  show(0, true);
-  demo.dataset.playing = 'false';
-  demo.dataset.demoMode = stopped ? 'settled' : 'ready';
+  document.addEventListener('visibilitychange', schedule);
+  window.addEventListener('pagehide', stop);
+  window.addEventListener('pageshow', schedule);
+  if ('IntersectionObserver' in window) new IntersectionObserver(entries => {
+    visible = entries.some(e => e.isIntersecting && e.intersectionRatio >= .15); schedule();
+  }, {threshold:[0,.15]}).observe(demo);
+  orient(); show(0, true); demo.dataset.playing = 'false';
 })();
