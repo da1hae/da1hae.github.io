@@ -7,7 +7,7 @@
   const articleSlug = path.match(/^\/notes\/([a-z0-9-]+)\/?$/)?.[1] || '';
   const contentGroup = articleSlug ? 'notes_article' : path === '/notes/' ? 'notes_index'
     : path === '/' ? 'home' : path.split('/')[1] || 'other';
-  const services = new Set(['undecided', 'monthly', 'content', 'ads', 'influencer', 'growth-crm',
+  const services = new Set(['undecided', 'monthly', 'campaign', 'content', 'ads', 'influencer', 'growth-crm',
     'diagnosis', 'landing', 'consulting', 'education', 'crm', 'brand', 'page']);
   const normalizeService = value => services.has(value) ? ({brand:'diagnosis',page:'landing',crm:'growth-crm'}[value] || value) : 'undecided';
 
