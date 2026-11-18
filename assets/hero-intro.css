@@ -6,17 +6,18 @@
 .monthly-hero h1 em { color:var(--blue); font-weight:inherit; }
 .hero-intent { max-width:32em; margin:26px 0 0; color:#393d46; font-size:18px; font-weight:450; line-height:1.75; word-break:keep-all; }
 .hero-action-row { margin-top:30px; gap:21px; }
-.hero-action-row .button { min-height:58px; }
-.hero-action-row .actions { gap:16px 28px; }
+.hero-action-row .button { width:100%; min-width:0; min-height:58px; padding-inline:24px; justify-content:space-between; font-size:16px; text-decoration:none; }
+.hero-action-row .actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); width:min(100%,460px); gap:12px; }
+.hero-action-row .button.secondary { color:var(--blue); border-color:var(--blue); background:transparent; }
+.hero-action-row .button.secondary:is(:hover,:focus-visible) { color:#1936bd; border-color:#1936bd; background:#edf1ff; }
 .hero-capacity { color:#555c68; font-size:13px; line-height:1.6; }
 .hero-capacity strong { color:var(--ink); font-weight:600; }
 @media (min-width:901px) and (max-width:1100px) {
   .monthly-hero h1 { font-size:clamp(38px,4.3vw,47px); }
   .hero-audience { font-size:13px; margin-bottom:20px; }
   .hero-intent { font-size:16px; }
-  .hero-action-row .actions { gap:14px 22px; }
-  .hero-action-row .button { min-width:202px; padding-inline:20px; }
-  .hero-secondary { font-size:15px; }
+  .hero-action-row .actions { width:min(100%,416px); }
+  .hero-action-row .button { padding-inline:20px; }
 }
 @media (min-width:641px) and (max-width:900px) {
   .hero-copy { max-width:620px; }
@@ -28,7 +29,7 @@
   .hero-intent { margin-top:22px; font-size:15px; line-height:1.8; }
   .hero-intent br { display:block; }
   .hero-action-row { margin-top:26px; gap:16px; }
-  .hero-action-row .actions { gap:9px; }
+  .hero-action-row .actions { grid-template-columns:1fr; width:100%; gap:10px; }
   .hero-action-row .button { min-height:54px; }
   .hero-capacity { font-size:12px; }
 }
