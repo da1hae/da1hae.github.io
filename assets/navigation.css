@@ -9,7 +9,7 @@ html { scroll-padding-top:calc(var(--header-height) + 16px); }
 .editorial-section { scroll-margin-top:calc(var(--reading-height) + 8px); }
 :where(a,button,input,select,textarea,summary) { scroll-margin-block-start:calc(var(--header-height) + 16px); }
 .back-to-top { position:fixed; z-index:50; right:max(20px,env(safe-area-inset-right)); bottom:max(20px,env(safe-area-inset-bottom)); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; width:52px; height:52px; padding:0; background:white; border:1px solid #7d838e; border-radius:50%; color:var(--ink); font-size:10px; line-height:1.3; font-weight:650; transition:background-color .16s,color .16s; }
-.back-to-top svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.back-to-top svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
 .back-to-top:is(:hover,:focus-visible) { background:var(--blue); border-color:var(--blue); color:white; }
 .minimal-footer-inner { padding-right:96px; }
 @media(max-width:640px) {
