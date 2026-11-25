@@ -2,6 +2,17 @@
   "version": 1,
   "articles": [
     {
+      "slug": "reach-without-recall",
+      "title": "조회수는 높은데, 왜 브랜드는 기억에 남지 않을까",
+      "description": "조회수와 브랜드 기억은 같은 성과가 아닙니다. 공개 광고 사례와 가상 콘텐츠 비교를 통해 브랜드 회상, 검색, 방문을 구분해 읽는 기준을 살펴봅니다.",
+      "category": "브랜드 · 콘텐츠",
+      "published_at": "2026-11-25",
+      "modified_at": "2026-11-25",
+      "publication_type": "weekly",
+      "week_key": "2026-W48",
+      "url": "https://da1hae.xyz/notes/reach-without-recall/"
+    },
+    {
       "slug": "crm-first-flow",
       "title": "할인 쿠폰보다 먼저 설계할 첫 구매 이후의 경험",
       "description": "첫 구매 이후 CRM은 무엇부터 보내야 할까요? 사용 안내, 피드백, 재구매 제안의 시점과 제외 조건, 성과를 판단할 기준을 정리합니다.",
